@@ -1,7 +1,7 @@
 name: Actions Workflow
 
-on: [push]
-
+on: [push, pull_request]
+#pull_request only events open & reopend & synchronized by default not closed
 jobs:
   run-github-actions:
     runs-on: ubuntu-latest
