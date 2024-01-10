@@ -2,9 +2,9 @@ name: Ali
 age: 28
 address: "ejdnkwej wekjndwed"
 active: true
-key: 
+key:
   key: value
-  key2: 33
+  key2: 333
   key3:
     key: value
     key2: value
