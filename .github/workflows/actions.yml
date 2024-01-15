@@ -1,10 +1,9 @@
 name: Actions Workflow
-# cron:"minutes hours day-of-a-month month day-of-the-week" asterisk means any value
 on:
- # schedule:
+  repository_dispatch:
+  # schedule:
   #  - cron: "0/5 * * * *"
   #  - cron: "0/6 * * * *"
-    #this expression means any day of the week, any month, any year, any hour, any minute.Every minute
   # push:
   pull_request:
     types: [closed, assigned, opened, reopened]
