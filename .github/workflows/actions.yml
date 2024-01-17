@@ -1,20 +1,33 @@
 name: Actions Workflow
+
 on:
-  repository_dispatch:
-    types: [build]
+  push:
+    branches:
+      - master
+      - "feature/*" # matches feature/featA, feature/featB , doesn't match feature/feat/a
+      - "feature/**" # matches feature/feat/a
+      - "!feature/featC"
+    tags:
+      - v1.*
+    paths:
+      - "**.js" # run this wf when we change only JS files.
+      - "!filename.js" # ignore a certain JS file.
+    # paths-ignore:
+    # - "docs/**" # if we push anything in a folder called "docs"
+  # repository_dispatch:
+  # types: [build]
   # schedule:
   #  - cron: "0/5 * * * *"
   #  - cron: "0/6 * * * *"
   # push:
-  pull_request:
-    types: [closed, assigned, opened, reopened]
-#pull_request only events open & reopend & synchronized by default not closed
+  # pull_request:
+  # types: [closed, assigned, opened, reopened]
 jobs:
   run-github-actions:
     runs-on: ubuntu-latest
     steps:
       - name: Payload
-        run: echo ${{ github.event.client_payload.env}}
+        run: echo ${{ github.event.client_payload.env }}
       - name: List Files
         run: |
           pwd
