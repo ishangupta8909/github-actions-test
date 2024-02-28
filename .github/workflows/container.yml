@@ -5,3 +5,9 @@ jobs:
   node-docker:
     runs-on: ubuntu-latest
     container:
+      image: node:21-alpine3.18
+    steps:
+      - name: Log node version
+        run: |
+          node -v
+          cat /etc/os-release
