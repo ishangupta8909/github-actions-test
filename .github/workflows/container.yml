@@ -10,12 +10,12 @@ jobs:
       - name: log node version
         run: node -v
       - name: Step with docker
-        uses: docker://node:18-buster
+        uses: docker://node:21-bookworm-slim
         with:
           entrypoint: "/bin/echo "
           args: "Hello World"
       - name: Log node version
-        uses: docker://node:18-buster
+        uses: docker://node:21-bookworm-slim
         with:
           entrypoint: /usr/local/bin/node
           args: -v
