@@ -12,7 +12,7 @@ jobs:
       - name: Step with docker
         uses: docker://node:18-buster
         with:
-          entrypoint: "/bin/echo "
+          entrypoint: "/bin/echo"
           args: "Hello World"
       - name: Log node version
         uses: docker://node:18-buster
