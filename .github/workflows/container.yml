@@ -5,7 +5,7 @@ jobs:
   docker-steps:
     runs-on: ubuntu-latest
     container:
-      image: node:21-alpine3.18
+      image: node:18-buster
     steps:
       - name: log node version
         run: node -v
@@ -15,15 +15,15 @@ jobs:
           entrypoint: "/bin/echo"
           args: "Hello World"
       - name: Log node version
-        uses: docker://node:18-buster
+        uses: docker://node:21-alpine3.18
         with:
           entrypoint: /usr/local/bin/node
           args: -v
       - uses: actions/checkout@v4.1.1
       - name: Run a script
-        uses: docker://node:18-buster
+        uses: docker://node:21-alpine3.18
         with:
-          entrypoint: ./script.sh
+          entrypoint: ./scripts.sh
           args: "Some String"
   node-docker:
     runs-on: ubuntu-latest
