@@ -10,7 +10,7 @@ jobs:
       - name: log node version
         run: node -v
       - name: Step with docker
-        uses: docker://node:18-buster
+        uses: docker://node:21-alpine3.18
         with:
           entrypoint: "/bin/echo"
           args: "Hello World"
